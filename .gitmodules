@@ -1,0 +1,6 @@
+[submodule "client"]
+	path = client
+	url = https://github.com/JohnPett/Face-the-Internet
+[submodule "server"]
+	path = server
+	url = https://github.com/eduwass/face-the-internet-worker

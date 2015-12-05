@@ -1,0 +1,28 @@
+#
+# This YAML file specifies the Face The Internet client and server setup 
+# Compose file reference: https://docs.docker.com/compose/compose-file/
+# 
+#############################
+# Server
+#############################
+server:
+  container_name: face-the-internet-server
+  build: ./server
+  ports:
+    - "8080:8080"
+  volumes:
+    - ./server:/app
+
+#############################
+# Client
+#############################
+client:
+  container_name: face-the-internet-client
+  build: ./client
+  ports:
+      - "3000:3000"
+  volumes:
+    - ./client:/app
+  links:
+     - server
+
