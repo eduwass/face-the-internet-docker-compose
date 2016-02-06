@@ -27,6 +27,12 @@ Keep in mind that this will take quite a while the first time since it has to do
 * **Client:** `docker-compose run client bash`
 * **Server:** `docker-compose run server bash`
 
+#### Server example commands
+##### Slice image to rows of 5% height
+`convert -crop 100%x5% +repage ./examples/face3.png out/%d_image.png`
+##### Morph two faces and output 30 images
+`python facemorpher/morpher.py --src=examples/face3.jpg --dest=examples/face4.jpg --out_frames=out_folder --num=30`
+
 # Resetting Docker to default state
 
 ##### 1. Stop and remove Docker containers:
