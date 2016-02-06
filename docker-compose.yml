@@ -7,6 +7,7 @@
 #############################
 server:
   container_name: face-the-internet-server
+  #image: eduwass/face-the-internet-worker
   build: ./server
   ports:
     - "8080:8080"
@@ -18,11 +19,12 @@ server:
 #############################
 client:
   container_name: face-the-internet-client
+  #image: johnrobertpett/face-the-internet
   build: ./client
   ports:
-      - "3000:3000"
+     - "3000:3000"
   volumes:
-    - ./client:/app
-  links:
-     - server
+   - ./client:/app
+#  links:
+#    - server
 
