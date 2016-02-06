@@ -28,6 +28,9 @@ Keep in mind that this will take quite a while the first time since it has to do
 * **Server:** `docker-compose run server bash`
 
 #### Server example commands
+First cd into app folder
+`cd /app/`
+
 ##### Slice image to rows of 5% height
 `convert -crop 100%x5% +repage ./examples/face3.png rows/%d_image.png`
 ##### [FaceMorpher](https://github.com/alyssaq/face_morpher) Morph two faces and output 30 images
