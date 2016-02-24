@@ -8,6 +8,8 @@
 server:
   container_name: face-the-internet-server
   #image: eduwass/face-the-internet-worker
+  domainname: face-the-internet-server.dev
+  hostname: face-the-internet-server
   build: ./server
   ports:
     - "8080:8080"
@@ -20,11 +22,12 @@ server:
 client:
   container_name: face-the-internet-client
   #image: johnrobertpett/face-the-internet
+  domainname: face-the-internet-client.dev
+  hostname: face-the-internet-client
   build: ./client
   ports:
      - "3000:3000"
   volumes:
    - ./client:/app
-#  links:
-#    - server
+
 
