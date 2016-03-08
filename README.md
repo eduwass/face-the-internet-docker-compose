@@ -13,15 +13,16 @@ Puts together both repos so you can launch them both as a multi-container Docker
 ##### 2. Start the Docker VM machine using the run.sh script
 `. run.sh`
 
-Stop anytime with 
+## Main Commands:
+```
+. run.sh        #  starts a Docker VM and runs both containers inside it    
+. stop.sh       #  stops the running VM
+. reset.sh      #  CAUTION deletes all docker VMs and containers and resets to default status
+. ssh-client.sh #  starts an SSH session inside the Client container
+. ssh-server.sh #  starts an SSH session iniside the Server container  
+```
 
-`. stop.sh`
-
-# Access the boxes CLI
-* **Client:** `docker-compose run client bash` or `. ssh-client.sh`
-* **Server:** `docker-compose run server bash` or `. ssh-server.sh`
-
-#### Server example commands
+### Server example commands
 First SSH into the server and then cd into app folder
 `cd /app/`
 
@@ -44,6 +45,8 @@ convert -crop 100%x5% +repage ./morph/frame3.png rows/dest_%d.png
 ```
 
 # Resetting Docker to default state
+
+Just run `. reset.sh` or run this manually:
 
 ##### 1. Stop and remove Docker containers:
 `docker stop $(docker ps -a -q)`
