@@ -10,25 +10,19 @@ Puts together both repos so you can launch them both as a multi-container Docker
 ##### 1. Clone the repo **using recursive option**:
 `git clone https://github.com/eduwass/face-the-internet-docker-compose.git --recursive`
 
-##### 2. Start Docker VM machine
-`docker-machine create --driver virtualbox dev`
+##### 2. Start the Docker VM machine using the run.sh script
+`. run.sh`
 
-`docker-machine start dev`
+Stop anytime with 
 
-##### 3. Set needed Docker env vars
-`eval "$(docker-machine env dev)"`
-
-##### 4. Run Docker Compose
-Keep in mind that this will take quite a while the first time since it has to download and build the image.
-
-`docker-compose up -d`
+`. stop.sh`
 
 # Access the boxes CLI
-* **Client:** `docker-compose run client bash`
-* **Server:** `docker-compose run server bash`
+* **Client:** `docker-compose run client bash` or `. ssh-client.sh`
+* **Server:** `docker-compose run server bash` or `. ssh-server.sh`
 
 #### Server example commands
-First cd into app folder
+First SSH into the server and then cd into app folder
 `cd /app/`
 
 ##### Slice image to rows of 5% height
