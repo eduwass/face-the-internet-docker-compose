@@ -89,6 +89,9 @@ INTERNAL_IP=$(docker-machine ip $DOCKER_MACHINE_NAME)
 echo "To access Client open this address with web browser:"
 echo $INTERNAL_IP:3000
 open http://$INTERNAL_IP:3000
+echo "To access Server open this address with web browser:"
+echo $INTERNAL_IP:1337
+open http://$INTERNAL_IP:1337
 
 #########################################################################
 # Bring up environment:
