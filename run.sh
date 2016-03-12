@@ -48,11 +48,19 @@ else
   # Machine exists but Stopped
   if (docker-machine ls | grep "^$DOCKER_MACHINE_NAME .* Stopped"); then
     echo "-----------------------------------------------------------"
-    echo "Machine already exists"
     echo "Starting Docker machine ... $DOCKER_MACHINE_NAME"
     echo "-----------------------------------------------------------"
     docker-machine start $DOCKER_MACHINE_NAME
   fi
+
+  #########################################################################
+  # Build images:
+  #########################################################################
+  echo "-----------------------------------------------------------"
+  echo "Building images"
+  echo "-----------------------------------------------------------"
+  eval $(docker-machine env $DOCKER_MACHINE_NAME)
+  docker-compose build
 
 fi
 
@@ -70,13 +78,6 @@ echo "-----------------------------------------------------------"
 # echo "-----------------------------------------------------------"
 # echo "$(docker-machine ip $DOCKER_MACHINE_NAME) $HOSTNAME" | sudo tee -a /etc/hosts
 
-#########################################################################
-# Build images:
-#########################################################################
-echo "-----------------------------------------------------------"
-echo "Building images"
-echo "-----------------------------------------------------------"
-docker-compose build
 
 #########################################################################
 # Output info

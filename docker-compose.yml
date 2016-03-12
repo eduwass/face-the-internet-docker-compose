@@ -12,7 +12,7 @@ server:
   hostname: face-the-internet-server
   build: ./server
   ports:
-    - "8080:8080"
+    - "1337:1337"
   volumes:
     - ./server:/app
 

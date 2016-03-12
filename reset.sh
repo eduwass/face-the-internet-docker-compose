@@ -16,5 +16,5 @@ echo "##### 3. Remove all images"
 docker rmi $(docker images -q)
 
 echo "##### 4. Stop and remove docker-machine"
-docker-machine stop dev
-docker-machine rm dev
+docker-machine stop facethemachine
+docker-machine rm facethemachine

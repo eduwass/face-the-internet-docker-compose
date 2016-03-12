@@ -15,16 +15,18 @@ Puts together both repos so you can launch them both as a multi-container Docker
 
 ## Main Commands:
 ```
-. run.sh        #  starts a Docker VM and runs both containers inside it    
-. stop.sh       #  stops the running VM
-. reset.sh      #  CAUTION deletes all docker VMs and containers and resets to default status
-. ssh-client.sh #  starts an SSH session inside the Client container
-. ssh-server.sh #  starts an SSH session iniside the Server container  
+. run.sh        # starts a Docker VM and runs both containers inside it    
+. stop.sh       # stops the running VM
+. reset.sh      # CAUTION deletes all docker VMs and containers and resets to default status
+. status.sh     # outputs current status of VMs and Docker Containers
+. set_env.sh    # sets the needed env vars to run Docker commands
+. ssh-client.sh # starts an SSH session inside the Client container
+. ssh-server.sh # starts an SSH session iniside the Server container  
 ```
 
 ### Server example commands
-First SSH into the server and then cd into app folder
-`cd /app/`
+First SSH into the server and then cd into app (old) folder
+`cd /app/old`
 
 ##### Slice image to rows of 5% height
 `convert -crop 100%x5% +repage ./examples/face3.png rows/%d_image.png`
